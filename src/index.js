@@ -11,6 +11,9 @@ const infoReducer = (state = [], action) => {
     if (action.type === 'ADD_INFO') {
         newState = [...state, action.payload]
     }
+    else if (action.type === 'RESTART_INFO') {
+        newState = [];
+    }
     return newState;
 }
 

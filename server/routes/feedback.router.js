@@ -12,8 +12,15 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    pool.query(`INSERT INTO "feedback" (feeling, understanding, support, comments, flagged)
-    VALUES ($1, $2, $3, $4, $5)`)
+    const feedback = req.body;
+    const feeling = feedback.feeling;
+    const understand = feedback.understand;
+    const support = feedback.support;
+    const comment = feedback.comment;
+
+    const sqlText = `INSERT INTO "feedback" (feeling, understanding, support, comments, flagged)
+    VALUES ($1, $2, $3, $4, $5)`
+    pool.query(sqlText, [feeling, understand, support, comment, true]).then(()=>{res.sendStatus(201)}).catch(()=>{res.sendStatus(500)})
 })
 
 module.exports = router;

@@ -6,7 +6,9 @@ import Axios from "axios";
 class ReviewPage extends Component {
 
     submitHandler = () => {
-        Axios.put()
+        Axios.put('/reflect', [this.props.infoReducer])
+        .then(()=>{console.log(`Reflection is being submitted`)})
+        .catch((error)=>{console.log(error)});
     }
 
     render() {
