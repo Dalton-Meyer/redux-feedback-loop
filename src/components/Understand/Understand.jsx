@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import Button from '@material-ui/core/Button';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import TextField from '@material-ui/core/TextField';
 
 class UnderstandPage extends Component {
     state = {
@@ -24,13 +28,14 @@ class UnderstandPage extends Component {
         return (
             <div>
                 <h2>How well are you understanding the content?</h2>
-                <input type='number' 
+                <TextField type='number' 
                 placeholder='Understanding?' 
-                value={this.state.feeling}
+                variant='filled'
                 onChange={(event)=>this.handleChange(event)}
-                /> 
-                <Link to='/support'><button onClick={this.clickHandler}>Next</button></Link>
-                <Link to='/feeling'><button>Back</button></Link>
+                /> <br/>
+                <Link to='/feeling'><Button variant="contained" size="large" color="primary" startIcon= {<ArrowBackIosIcon/>}>Back</Button></Link>
+                <Link to='/support'><Button onClick={this.clickHandler}variant="contained" size="large" color="primary" endIcon= {<ArrowForwardIosIcon/>}>Next</Button></Link>
+                
             </div>
         );
     }

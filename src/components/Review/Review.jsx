@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import Button from '@material-ui/core/Button';
+import PublishIcon from '@material-ui/icons/Publish';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 class ReviewPage extends Component {
 
@@ -23,8 +26,9 @@ class ReviewPage extends Component {
                 <h3>Understanding: {infoReducer.understanding}</h3>
                 <h3>Support: {infoReducer.support}</h3>
                 <h3>Comments: {infoReducer.comment}</h3>
-                <Link to='/feedback'><button onClick={this.submitHandler}>Submit</button></Link>
-                <Link to='/comment'><button>Back</button></Link>
+                <Link to='/comment'><Button variant="contained" size="large" color="primary" startIcon= {<ArrowBackIosIcon/>}>Back</Button></Link>
+                <Link to='/feedback'><Button onClick={this.submitHandler} variant="contained" size="large" color="primary" endIcon= {<PublishIcon/>}>Submit</Button></Link>
+                
             </div>
         );
     }

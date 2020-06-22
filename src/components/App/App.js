@@ -8,10 +8,13 @@ import SupportPage from '../Support/Support'
 import CommentPage from '../Comment/Comment'
 import ReviewPage from '../Review/Review'
 import FeedbackPage from '../Feedback/Feedback'
+import Container from '@material-ui/core/Container'
+
 
 class App extends Component {
   render() {
     return (
+      <Container maxWidth='lg'>
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
@@ -39,11 +42,10 @@ class App extends Component {
           <Route path='/feedback'>
           <FeedbackPage/>
           </Route>
-
-
         </Router>
         <br/>
       </div>
+      </Container>
     );
   }
 }
