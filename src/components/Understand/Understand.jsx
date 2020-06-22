@@ -14,14 +14,13 @@ class UnderstandPage extends Component {
     handleChange = (event) => {
         this.setState({
             understanding: event.target.value
-        })
-        console.log(event.target.value);
+        }) // sets the state the value inside the input
     }
 
     clickHandler = () => {
         const {dispatch} = this.props;
         dispatch({type:'ADD_UNDERSTANDING', payload: this.state.understanding})
-    }
+    } // send the dispatch to add to the global state
 
     render() {
       
@@ -40,7 +39,8 @@ class UnderstandPage extends Component {
         );
     }
 };
-
+// brought in material ui for buttons and icon
+// each button has a link to go either back to the last page or move forward to the next
 
 
 export default connect()(UnderstandPage);

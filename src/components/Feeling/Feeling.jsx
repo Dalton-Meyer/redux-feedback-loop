@@ -8,20 +8,22 @@ import TextField from '@material-ui/core/TextField';
 
 class FeelingPage extends Component {
     state = {
-        feeling: 0,
+        feeling: '',
     }
 
     handleChange = (event) => {
         this.setState({
             feeling: event.target.value
         })
-        console.log(event.target.value);
     }
 
     clickHandler = () => {
         const {dispatch} = this.props;
+        if(this.state.feeling !== undefined || this.state.feeling !== ''){
         dispatch({type:'ADD_FEELING', payload: this.state.feeling})
+        } else { alert('please input valid number')}
     }
+    // sends a dispatch to add the information from the form to the global state
 
     render() {
       
@@ -40,7 +42,8 @@ class FeelingPage extends Component {
         );
     }
 };
-
+// brought in material ui for buttons and icon
+// each button has a link to go either back to the last page or move forward to the next
 
 
 export default connect()(FeelingPage);

@@ -17,8 +17,7 @@ class App extends Component {
       <Container maxWidth='lg'>
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
+          <h1 className="App-title">Daily Reflections!</h1> 
         </header>
         <Router>
           <Route exact path='/'>
@@ -49,5 +48,6 @@ class App extends Component {
     );
   }
 }
+// sets up the constant header and all the different routes to each section of the forms.
 
 export default App;

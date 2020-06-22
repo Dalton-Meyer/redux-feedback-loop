@@ -14,14 +14,13 @@ class CommentPage extends Component {
     handleChange = (event) => {
         this.setState({
             comment: event.target.value
-        })
-        console.log(event.target.value);
+        })// sets local state
     }
 
     clickHandler = () => {
         const {dispatch} = this.props;
         dispatch({type:'ADD_COMMENT', payload: this.state.comment})
-    }
+    }// adds the local state to the global state
 
     render() {
       
@@ -41,6 +40,7 @@ class CommentPage extends Component {
     }
 };
 
-
+// brought in material ui for buttons and icon
+// each button has a link to go either back to the last page or move forward to the next
 
 export default connect()(CommentPage);

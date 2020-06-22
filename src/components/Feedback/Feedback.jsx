@@ -18,6 +18,6 @@ class FeedbackPage extends Component {
         );
     }
 };
-
+// just a basic page to show you that things have been submitted and a thank you
 
 export default connect()(FeedbackPage);

@@ -14,14 +14,13 @@ class SupportPage extends Component {
     handleChange = (event) => {
         this.setState({
             support: event.target.value
-        })
-        console.log(event.target.value);
+        })// changes the local state to the value of input
     }
 
     clickHandler = () => {
         const {dispatch} = this.props;
         dispatch({type:'ADD_SUPPORT', payload: this.state.support})
-    }
+    } // sends the state off to be added to the global state
 
     render() {
       
@@ -39,7 +38,8 @@ class SupportPage extends Component {
         );
     }
 };
-
+// brought in material ui for buttons and icon
+// each button has a link to go either back to the last page or move forward to the next
 
 
 export default connect()(SupportPage);

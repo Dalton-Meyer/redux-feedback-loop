@@ -14,11 +14,10 @@ class ReviewPage extends Component {
         .then((res)=>{console.log('Heeeeey!', res.status) 
         dispatch({type:'RESTART_INFO'})})
         .catch((error)=>{console.log(error)});
-    }
+    }// sends off everything you stored from the previous pages in the global state out to the database
 
     render() {
-      const {infoReducer} = this.props;
-      console.log(infoReducer);
+      const {infoReducer} = this.props; // brings in the global state to display info on page
         return (
             <div>
                 <h2>Review Your FeedBack</h2>
@@ -33,9 +32,10 @@ class ReviewPage extends Component {
         );
     }
 };
-
+// just displays everything you have filled out so far 
+// also has a back button and the final submit button to send information off to database
 const mapStateToProps = (state) => {
-  return {
+  return { // brings the global state in as a prop
     infoReducer: state.infoReducer
   };
 };
