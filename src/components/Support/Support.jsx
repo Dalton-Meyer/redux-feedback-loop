@@ -16,7 +16,7 @@ class SupportPage extends Component {
 
     clickHandler = () => {
         const {dispatch} = this.props;
-        dispatch({type:'ADD_INFO', payload: this.state.support})
+        dispatch({type:'ADD_SUPPORT', payload: this.state.support})
     }
 
     render() {
@@ -30,6 +30,7 @@ class SupportPage extends Component {
                 onChange={(event)=>this.handleChange(event)}
                 /> 
                 <Link to='/comment'><button onClick={this.clickHandler}>Next</button></Link>
+                <Link to='/understanding'><button>Back</button></Link>
             </div>
         );
     }

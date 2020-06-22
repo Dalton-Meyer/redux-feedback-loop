@@ -13,14 +13,15 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const feedback = req.body;
+    console.log(feedback);
     const feeling = feedback.feeling;
-    const understand = feedback.understand;
+    const understand = feedback.understanding;
     const support = feedback.support;
     const comment = feedback.comment;
 
-    const sqlText = `INSERT INTO "feedback" (feeling, understanding, support, comments, flagged)
-    VALUES ($1, $2, $3, $4, $5)`
-    pool.query(sqlText, [feeling, understand, support, comment, true]).then(()=>{res.sendStatus(201)}).catch(()=>{res.sendStatus(500)})
+    const sqlText = `INSERT INTO "feedback" (feeling, understanding, support, comments)
+    VALUES ($1, $2, $3, $4)`
+    pool.query(sqlText, [feeling, understand, support, comment]).then(()=>{res.sendStatus(201)}).catch(()=>{res.sendStatus(500)})
 })
 
 module.exports = router;

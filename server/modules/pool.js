@@ -63,7 +63,7 @@ if (process.env.DATABASE_URL) {
   };
 } else {
   config = {
-     database: "weekend-to-do-app",
+     database: "redux-feedback-loop",
      user: "dalton",
      password: "dalton",
      host: "127.0.0.1",

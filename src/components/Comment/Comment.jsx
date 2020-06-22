@@ -16,20 +16,21 @@ class CommentPage extends Component {
 
     clickHandler = () => {
         const {dispatch} = this.props;
-        dispatch({type:'ADD_INFO', payload: this.state.comment})
+        dispatch({type:'ADD_COMMENT', payload: this.state.comment})
     }
 
     render() {
       
         return (
             <div>
-                <h2>How are you feeling today?</h2>
+                <h2>Any comments you would like to add?</h2>
                 <input type='text' 
                 placeholder='Any comments you want to leave?' 
                 value={this.state.comment}
                 onChange={(event)=>this.handleChange(event)}
                 /> 
                 <Link to='/review'><button onClick={this.clickHandler}>Next</button></Link>
+                <Link to='/support'><button>Back</button></Link>
             </div>
         );
     }

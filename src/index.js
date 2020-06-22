@@ -6,13 +6,22 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-const infoReducer = (state = [], action) => {
-    let newState = [...state]
-    if (action.type === 'ADD_INFO') {
-        newState = [...state, action.payload]
+const infoReducer = (state = { feeling: 0,support: 0,understanding: 0,comment: ''} , action) => {
+    let newState = state
+    if (action.type === 'ADD_FEELING') {
+        newState.feeling = Number(action.payload)
+    }
+    else if (action.type === 'ADD_SUPPORT') {
+        newState.support = Number(action.payload)
+    }
+    else if (action.type === 'ADD_UNDERSTANDING'){
+        newState.understanding = Number(action.payload)
+    }
+    else if (action.type === 'ADD_COMMENT'){
+        newState.comment = action.payload
     }
     else if (action.type === 'RESTART_INFO') {
-        newState = [];
+        newState = state;
     }
     return newState;
 }

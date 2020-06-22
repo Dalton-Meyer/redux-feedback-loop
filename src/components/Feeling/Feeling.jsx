@@ -16,7 +16,7 @@ class FeelingPage extends Component {
 
     clickHandler = () => {
         const {dispatch} = this.props;
-        dispatch({type:'ADD_INFO', payload: this.state.feeling})
+        dispatch({type:'ADD_FEELING', payload: this.state.feeling})
     }
 
     render() {
@@ -30,6 +30,7 @@ class FeelingPage extends Component {
                 onChange={(event)=>this.handleChange(event)}
                 /> 
                 <Link to='/understanding'><button onClick={this.clickHandler}>Next</button></Link>
+                <Link to='/'><button>Back</button></Link>
             </div>
         );
     }
